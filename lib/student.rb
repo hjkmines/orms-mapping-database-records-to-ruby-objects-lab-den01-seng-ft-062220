@@ -68,7 +68,7 @@ class Student
   end 
   
   def self.first_X_students_in_grade_10(num_of_students)
-    sql <<-SQL 
+    sql = <<-SQL 
     SELECT * 
     FROM students
     WHERE students.grade = 10
