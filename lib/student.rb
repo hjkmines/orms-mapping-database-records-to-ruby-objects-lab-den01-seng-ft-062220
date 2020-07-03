@@ -67,6 +67,17 @@ class Student
     end 
   end 
   
+  def self.first_X_students_in_grade_10(num_of_students)
+    sql <<-SQL 
+    SELECT * 
+    FROM students
+    WHERE students.grade = 10
+    LIMIT num_of_students
+    SQL
+    DB[:conn].execute(sql).map do |row|
+      self.new_from_db(row)
+    end 
+  end 
   
   def self.create_table
     sql = <<-SQL
