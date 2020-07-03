@@ -78,10 +78,11 @@ class Student
   end 
   
   def self.first_student_in_grade_10 
-    self.first_student_in_grade_10(1).map do |row|
+    s = self.first_student_in_grade_10(1)
+    s.map do |row|
       self.new_from_db(row)
     end[0]
-    
+
   end 
   
   
